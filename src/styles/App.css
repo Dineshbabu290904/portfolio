@@ -1,0 +1,167 @@
+:root {
+  /* Light theme defaults */
+  --primary-color: #2575fc;
+  --secondary-color: #6a11cb;
+  --background-primary: #ffffff;
+  --background-secondary: #f8f9fa;
+  --text-primary: #2c3e50;
+  --text-secondary: #666666;
+  --glass: rgba(255, 255, 255, 0.8);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --transition: all 0.3s ease;
+  --border-radius: 20px;
+}
+
+[data-theme='dark'] {
+  --background-primary: #0f1624;
+  --background-secondary: #1a1f2e;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --glass: rgba(15, 22, 36, 0.95);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--background-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Add transition for all theme-related properties */
+.theme-transition {
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  position: relative;
+  padding: 6rem 2rem;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 4rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+  }
+}
+
+/* Glass effect for components */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  color: var(--primary);
+  font-size: 1.5rem;
+  z-index: 1000;
+}
+
+.loading::after {
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid var(--primary);
+  border-radius: 50%;
+  border-top-color: transparent;
+  margin-left: 1rem;
+  animation: loading 0.8s linear infinite;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Theme transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme-specific styles */
+[data-theme='dark'] {
+  --background: var(--background-dark);
+  --text: var(--text-dark);
+  /* Add other dark theme variables */
+}
+
+[data-theme='light'] {
+  --background: var(--background-light);
+  --text: var(--text-light);
+  /* Add other light theme variables */
+} 
