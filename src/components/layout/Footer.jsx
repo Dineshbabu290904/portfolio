@@ -67,15 +67,15 @@ function Footer() {
           <div className="footer-contact">
             <p>
               <FontAwesomeIcon icon={faLocationDot} />
-              Hyderabad, India
+              Vijayawada, India
             </p>
             <p>
               <FontAwesomeIcon icon={faPhone} />
-              +91 123-456-7890
+              +91 6300575551
             </p>
             <p>
               <FontAwesomeIcon icon={faEnvelope} />
-              dineshbabu@example.com
+              dineshbabusurapaneni@gmail.com
             </p>
           </div>
         </div>
